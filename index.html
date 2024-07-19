@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIProxy Model Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #question {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AIProxy Model Quiz App</h1>
+        <div id="question">
+            <h2>Question:</h2>
+            <p>Evaluate the following statements and calculate the total number of points.</p>
+            <ul>
+                <li>4 points if tts-1-1106 was created on 2023-11-08</li>
+                <li>2 points if gpt-3.5-turbo-instruct is located at index 20 (with 0 being the first index in the list of models)</li>
+                <li>1 point if gpt-4-0613 was created 6 models before gpt-3.5-turbo</li>
+            </ul>
+            <p>What is the correct total of points?</p>
+        </div>
+        <form action="/evaluate" method="POST">
+            <label for="token">Enter your AIProxy Token:</label>
+            <input type="text" id="token" name="token" placeholder="Your AIProxy Token" required>
+            <input type="submit" value="Evaluate Statements">
+        </form>
+    </div>
+</body>
+</html>
